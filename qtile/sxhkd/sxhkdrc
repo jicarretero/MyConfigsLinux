@@ -453,9 +453,9 @@ ctrl + alt + o
 #super + shift + space
 #    qtile-cmd -o window -f toggle_floating
 
-#Reload Qtile
-#super + shift + r
-#    qtile-cmd -o cmd -f restart
+Reload Qtile
+super + shift + r
+    qtile cmd-obj -o cmd -f restart
 
 
 #################################################################

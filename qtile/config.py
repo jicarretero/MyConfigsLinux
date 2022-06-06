@@ -167,7 +167,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
-group_labels = ["1:  ", "2:  ", "3:  ", "4:  ", "5:  ", "6:  ", "7:  ", "8:  ", "9:  ", "0:  ",]
+group_labels = ["1: ", "2:  ", "3:  ", "4:  ", "5:  ", "6:  ", "7:  ", "8:  ", "9:  ", "0:  ",]
 #group_labels = ["", "", "", "", "", "", "", "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
@@ -205,12 +205,18 @@ groups.append(
                 width=0.99, height=0.98, x=0.005),
             DropDown("cmus", "kitty -e cmus", opacity=1,
                 width=0.99, height=0.98, x=0.005),
+            DropDown("ranger", "kitty -e ranger", opacity=1,
+                width=0.99, height=0.98, x=0.005),
+            DropDown("zealdocs", "zeal", opacity=1,
+                width=1, height=1, x=0),
         ])
 )
 
 keys.extend([
         Key([], 'F12', lazy.group['scratchpad'].dropdown_toggle('term')),
-        Key([], 'F7', lazy.group['scratchpad'].dropdown_toggle('cmus'))
+        Key([], 'F7', lazy.group['scratchpad'].dropdown_toggle('cmus')),
+        Key([], 'F3', lazy.group['scratchpad'].dropdown_toggle('ranger')),
+        Key([], 'F1', lazy.group['scratchpad'].dropdown_toggle('zealdocs'))
     ])
 ## JICG -- End Scratchpad DropDown
 
@@ -593,7 +599,7 @@ def assign_app_group(client):
     elif wm_class == "Mail":
         client.togroup(group_names[6])
     elif wm_class == "jetbrains-pycharm-ce":
-        client.togroup(group_names[0])
+        client.togroup(group_names[1])
 
 # @hook.subscribe.client_new
 # def assign_app_group(client):
