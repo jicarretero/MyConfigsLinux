@@ -282,7 +282,8 @@ def init_widgets_list_2():
                         active = colors[5],
                         inactive = "#000000",
                         rounded = False,
-                        highlight_method = "text",
+                        highlight_method = "line",
+                        highlight_color = 	['000000', '2155ab'],
                         this_current_screen_border = colors[7],
                         foreground = colors[2],
                         background = colors[1]
@@ -327,10 +328,14 @@ def init_widgets_list():
                         # inactive = colors[6],
                         inactive = "#000000",
                         rounded = False,
-                        highlight_method = "text",
-                        this_current_screen_border = colors[7], ## KRT
+                        highlight_method = "line",
+                        highlight_color = 	['000000', '62ff00'],
+                        # this_current_screen_border = colors[7], ## KRT
+                        this_current_screen_border = "215578",
+                        # other_screen_border = "62ff00",
                         foreground = colors[2],
-                        background = colors[1] 
+                        background = colors[1]
+                        # ,
                         ),
                widget.Sep(
                         linewidth = 1,
