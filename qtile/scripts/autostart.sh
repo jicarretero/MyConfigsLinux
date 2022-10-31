@@ -17,7 +17,8 @@ function run {
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 #autorandr horizontal
-xrandr --output eDP1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+# xrandr --output eDP1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+~/.screenlayout/layout.sh
 
 #change your keyboard if you need it
 #setxkbmap -layout be
@@ -46,10 +47,11 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 #starting utility applications at boot time
 # run variety &
 feh --bg-fill /home/jicg/Pictures/Wallpapers/karate_bow_dark_1.jpg &
+# feh --bg-fill ./Pictures/Wallpapers/1_salamanca.jpg &
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &
-numlockx on &
+# numlockx on &
 blueberry-tray &
 # /opt/tuxedo-control-center/tuxedo-control-center &
 picom --config $HOME/.config/qtile/scripts/picom.conf &

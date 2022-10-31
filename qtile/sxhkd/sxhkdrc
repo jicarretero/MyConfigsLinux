@@ -75,10 +75,6 @@ super + l
     betterlockscreen -l dimblur -- --time-str="%H:%M"
 
 
-#Rofi theme selector
-super + r
-    rofi-theme-selector
-
 #Pavucontrol
 super + shift + v
     pavucontrol
@@ -319,11 +315,11 @@ ctrl + shift + Escape
 
 #Raises volume
 XF86AudioRaiseVolume
-    amixer set Master 10%+
+    amixer set Master 2%+
 
 #Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 10%-
+    amixer set Master 2%-
 
 #Mute
 XF86AudioMute
@@ -356,11 +352,13 @@ XF86AudioStop
 
 #Brightness up
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    sudo light -A 5
+#    xbacklight -inc 10
 
 #Brightness down
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    sudo light -U 5
+#    xbacklight -dec 10
 
 #########################
 #        POLYBAR        #
@@ -492,3 +490,6 @@ super + control + r
 
 Print
       gnome-screenshot -i
+
+super + w
+      rofi -show window

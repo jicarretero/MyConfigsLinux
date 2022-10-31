@@ -155,8 +155,8 @@ keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
     Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
     Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
-    Key([mod], "q", lazy.next_screen()),
-    Key([mod], "w", lazy.previous_screen()),
+    # Key([mod], "q", lazy.next_screen()),
+    # Key([mod], "w", lazy.previous_screen()),
 ])
 
 groups = []
@@ -202,7 +202,8 @@ for i in groups:
 groups.append(
         ScratchPad("scratchpad", [
             DropDown("term", "kitty", opacity=1,
-                width=0.99, height=0.98, x=0.005),
+                # width=0.99, height=0.98, x=0.005),
+                width=1, height=1, x=0),
             DropDown("cmus", "kitty -e cmus", opacity=1,
                 width=0.99, height=0.98, x=0.005),
             DropDown("ranger", "kitty -e ranger", opacity=1,
@@ -348,17 +349,12 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1]
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.WindowName(font="Noto Sans",
-                        fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[1],
-                        ),
+               widget.TextBox(text="", width=bar.STRETCH),
+               # widget.WindowName(font="Noto Sans",
+                                   #         fontsize = 12,
+                                   #foreground = colors[5],
+                                   #background = colors[1],
+                                   #),
                # widget.Net(
                #          font="Noto Sans",
                #          fontsize=12,
@@ -409,12 +405,6 @@ def init_widgets_list():
                #          foregrond = colors[2],
                #          background = colors[1]
                #          ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
                widget.TextBox(
                          font="FontAwesome",
                          text="  ",
